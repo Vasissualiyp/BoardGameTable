@@ -6,6 +6,7 @@ import os
 # Define the games and corresponding png files
 games = {
     "Dune": ["./Dune/Dune_Board.png"],
+    "Etherfields": ["./Etherfields/Etherfields_horizontal_map.png"],
     "TicketToRide": [
         "./TicketToRideEurope/EuropeMap.png",
         "./TicketToRideEurope/USAMap.png",
@@ -35,7 +36,10 @@ else:
 
 # Open the selected image in gwenview on the 1st desktop named "I" in bspwm
 subprocess.run(["bspc", "desktop", "-f", "I"])
-subprocess.run(["gwenview", selected_map])
+#subprocess.run(["gwenview", selected_map])
+subprocess.run(["feh", "--fullscreen", selected_map])
+#subprocess.run(["bspc", "node", "-t", "fullscreen"])
+
 
 print(f"{selected_game} is set up and ready to play!")
 
